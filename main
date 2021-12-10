@@ -1,0 +1,38 @@
+import time
+import random
+
+
+user_choise = -1
+
+
+horse = random.randint(1, 13)
+position = random.randint(2, 13)
+
+
+bet = int(input("Postaw zakład: "))
+
+user_choise = int(input("Wybierz numer konia na którego chcesz postawić [1-13]: "))
+
+print("Postawiłeś na konia", user_choise)
+time.sleep(1.5)
+
+print("Trwa wyścig...")
+time.sleep(3.0)
+
+
+
+#wynik wyścigu
+
+if user_choise == horse:
+    bet1 = bet * 3
+    print("Twój koń skończył na 1. miejscu, wygrałeś!", bet1, "trafia na twoje konto")
+if user_choise != horse:
+    if position == 2:
+        bet1 = bet * 1.5
+    if position == 3:
+        bet1 = bet * 1.25
+    if position > 3:
+        bet1 = 0
+    print("Przegrałeś, twój koń skończył na", position,". "  " miejscu. Otrzymałeś", bet1 ,"pieniądzy postawionych na zakład")
+
+
